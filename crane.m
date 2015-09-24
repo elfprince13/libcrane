@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #include "crane.h"
 
-void searchPathForApp(char * buf, int maxl, NSString* backup, NSString* appName, NSString* prefixDir, NSSearchPathDirectory nspd, NSString* postFix)
+void searchPathForApp(char * buf, size_t maxl, NSString* backup, NSString* appName, NSString* prefixDir, NSSearchPathDirectory nspd, NSString* postFix)
 {
 	@autoreleasepool {
 		NSString *ald = nil;
@@ -40,7 +40,7 @@ void searchPathForApp(char * buf, int maxl, NSString* backup, NSString* appName,
 	}
 }
 
-void getApplicationLogFile(char * buf, int maxl, const char* appName)
+void getApplicationLogFile(char * buf, size_t maxl, const char* appName)
 {
 	@autoreleasepool {
 		NSString *nAppName = @(appName);
@@ -49,7 +49,7 @@ void getApplicationLogFile(char * buf, int maxl, const char* appName)
 }
 
 //-----------------------------------------------------------------------------
-void getApplicationDataDirectory(char * buf, int maxl, const char* appName)
+void getApplicationDataDirectory(char * buf, size_t maxl, const char* appName)
 {
 	@autoreleasepool {
 		NSString *nAppName = @(appName);
@@ -58,7 +58,7 @@ void getApplicationDataDirectory(char * buf, int maxl, const char* appName)
 }
 
 //-----------------------------------------------------------------------------
-void getApplicationScriptsDirectory(char * buf, int maxl, const char* appName)
+void getApplicationScriptsDirectory(char * buf, size_t maxl, const char* appName)
 {
 	@autoreleasepool {
 		NSString *nAppName = @(appName);
@@ -67,7 +67,7 @@ void getApplicationScriptsDirectory(char * buf, int maxl, const char* appName)
 }
 
 //-----------------------------------------------------------------------------
-void getUserHomeDirectory(char * buf, int maxl)
+void getUserHomeDirectory(char * buf, size_t maxl)
 {
 	@autoreleasepool {
 		[(@"~/").stringByStandardizingPath getFileSystemRepresentation:buf maxLength:maxl];
@@ -75,7 +75,7 @@ void getUserHomeDirectory(char * buf, int maxl)
 }
 
 //-----------------------------------------------------------------------------
-void getTemporaryDirectory(char * buf, int maxl)
+void getTemporaryDirectory(char * buf, size_t maxl)
 {
 	@autoreleasepool {
 		NSString* tdir = NSTemporaryDirectory();

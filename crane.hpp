@@ -9,11 +9,11 @@
 #endif
 
 extern "C"  {
-	DLLFUNC void getApplicationLogFile(char * buf, int maxl, const char* appName);
-	DLLFUNC void getApplicationDataDirectory(char * buf, int maxl, const char* appName);
-	DLLFUNC void getApplicationScriptsDirectory(char * buf, int maxl, const char* appName);
-	DLLFUNC void getUserHomeDirectory(char * buf, int maxl);
-	DLLFUNC void getTemporaryDirectory(char * buf, int maxl);
+	DLLFUNC void getApplicationLogFile(char * buf, size_t maxl, const char* appName);
+	DLLFUNC void getApplicationDataDirectory(char * buf, size_t maxl, const char* appName);
+	DLLFUNC void getApplicationScriptsDirectory(char * buf, size_t maxl, const char* appName);
+	DLLFUNC void getUserHomeDirectory(char * buf, size_t maxl);
+	DLLFUNC void getTemporaryDirectory(char * buf, size_t maxl);
 }
 
 #endif

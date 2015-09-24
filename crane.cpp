@@ -42,7 +42,7 @@ static void _mkdir(const char *path)
 
 
 
-void searchPathForApp(char * buf, int maxl, const char* backupSuffix, const char* appName, 
+void searchPathForApp(char * buf, size_t maxl, const char* backupSuffix, const char* appName, 
 #ifdef XDG_UNIX
 					  const char* def_env, 
 #endif
@@ -125,7 +125,7 @@ void searchPathForApp(char * buf, int maxl, const char* backupSuffix, const char
 
 }
 
-DLLFUNC void getApplicationLogFile(char * buf, int maxl, const char* appName)
+DLLFUNC void getApplicationLogFile(char * buf, size_t maxl, const char* appName)
 {
 #ifdef XDG_UNIX
 #define backup ".cache"
@@ -161,7 +161,7 @@ DLLFUNC void getApplicationLogFile(char * buf, int maxl, const char* appName)
 }
 
 //-----------------------------------------------------------------------------
-DLLFUNC void getApplicationDataDirectory(char * buf, int maxl, const char* appName)
+DLLFUNC void getApplicationDataDirectory(char * buf, size_t maxl, const char* appName)
 {
 #ifdef XDG_UNIX
 #define backup ".local/share"
@@ -177,7 +177,7 @@ DLLFUNC void getApplicationDataDirectory(char * buf, int maxl, const char* appNa
 }
 
 //-----------------------------------------------------------------------------
-DLLFUNC void getApplicationScriptsDirectory(char * buf, int maxl, const char* appName)
+DLLFUNC void getApplicationScriptsDirectory(char * buf, size_t maxl, const char* appName)
 {
 #ifdef XDG_UNIX
 #define backup ".local/share"
@@ -193,7 +193,7 @@ DLLFUNC void getApplicationScriptsDirectory(char * buf, int maxl, const char* ap
 }
 
 //-----------------------------------------------------------------------------
-DLLFUNC void getUserHomeDirectory(char * buf, int maxl)
+DLLFUNC void getUserHomeDirectory(char * buf, size_t maxl)
 {
 #ifdef XDG_UNIX
 	char * homeDir = getenv("HOME");
@@ -216,7 +216,7 @@ DLLFUNC void getUserHomeDirectory(char * buf, int maxl)
 }
 
 //-----------------------------------------------------------------------------
-DLLFUNC void getTemporaryDirectory(char * buf, int maxl)
+DLLFUNC void getTemporaryDirectory(char * buf, size_t maxl)
 {
 #ifdef XDG_UNIX
 	char ttemp[14] = "/tmp/T-XXXXXX";
