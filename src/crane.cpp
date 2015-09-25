@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <fcntl.h>
-#include <string.h>
+#include <cstring>
 #include <sys/stat.h>
 #ifdef XDG_UNIX
 #include <dirent.h>
